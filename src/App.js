@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LoginScreen from "./Components/LoginScreen";
+import PatientProfile from "./Components/Patient/Patient.Profile/PatientProfile";
+import Menu from "./Components/menu";
+import MainContainer from "./Components/MainContainer";
+import { useState } from "react";
+import PandingAppointment from "./Components/Appointments/pandingAppointments/pandingappointment";
 function App() {
+  var data = window.localStorage.getItem("userData");
+  console.log(data, "===>");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginScreen />} />
+        <Route path="Dashboard" element={<Menu />} />
+        <Route path="pandingappointments" element={<PandingAppointment />} />
+      </Routes>
+    </Router>
   );
 }
 

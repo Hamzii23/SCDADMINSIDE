@@ -1,0 +1,143 @@
+.main-section{
+    width: calc(100% - 30%);
+    height: 70vh;
+ 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 18px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.first img{
+    border: 3px solid hsl(0, 84%, 27%);
+    background-color: white;
+    /* box-shadow:sienna; */
+    border-radius: 10px;
+    padding: 20px;
+    width: 110px;
+}
+
+.first-left{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.first-left i{
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.first-left p{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+
+.second{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.second .card-1{
+    background-color: #313131;
+    border-radius: 7px;
+    width: 15vw;
+    padding: 9px 25px 5px 11px;
+    /* border: 1px solid black; */
+}
+
+.second .card-1 .sub-text{
+    font-size: 14px;
+    color: white;
+}
+
+.second .card-1 .main-text{
+    font-size: 18px;
+    color: white;
+}
+
+.third{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.third .card-1{
+    background-color: #313131;
+    border-radius: 7px;
+    width: 40vw;
+    padding: 9px 25px 5px 11px;
+    /* border: 1px solid black; */
+}
+
+.third .card-1 .sub-text{
+    font-size: 14px;
+    color: white;
+
+}
+
+.third .card-1 .main-text{
+    font-size: 18px;
+    color: white;
+
+}
+
+.fourth{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.fourth .card-1{
+    background-color: #313131;
+    border-radius: 7px;
+    width: 80vw;
+    height: 15vh;
+    padding: 9px 25px 5px 11px;
+    /* border: 1px solid black; */
+}
+
+.fourth .card-1 .sub-text{
+    font-size: 14px;
+    color: white;
+
+}
+
+.fourth .card-1 .main-text{
+    font-size: 18px;
+    color: white;
+
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.buttons .button-1{
+    width: 10vw;
+    background-color: teal;
+    /* border: 1px solid white; */
+}
+
+.buttons .button-2{
+    width: 12vw;
+}

@@ -1,0 +1,259 @@
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.main-container{
+    width: 100%;
+    height: calc(100% - 90px);
+    background-color: #272727;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 7px;
+    overflow: hidden;
+    height: 98vh;
+}
+
+.main-container .left-container{
+    /* width: calc(100% - 30%); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.main-container .left-container .doctor-patient{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.main-container .left-container .doctor-patient .doctor{
+    width: 50%;
+    margin: 10px 5px 10px 10px;
+    border-radius: 5px;
+    background-color: #FFDFDB;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.main-container .left-container .doctor-patient .doctor h1{
+    color: #8f251e;
+    position: absolute;
+    top: 20;
+    left: 10;
+    padding-right: 20px;
+
+}
+
+.main-container .left-container .doctor-patient img{
+    width: 8vw;
+    position: absolute;
+    bottom: 0;
+    right: 0;   
+}
+.main-container .left-container .doctor-patient .patient{
+    width: 50%;
+    margin: 10px 5px 10px 10px;
+    border-radius: 5px;
+    background-color: #ccb7fd;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+}
+
+.main-container .left-container .doctor-patient .patient h1{
+    color: #2e2368;
+}
+
+.main-container .left-container .Appointments{
+    height: calc(100% - 60%);
+    margin: 10px;
+    border-radius: 7px;
+    background-color: #181818;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.Appointments .scheduled-appointments{
+    background-color: #abe0ff;
+    width: 40%;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.Appointments .scheduled-appointments h3{
+    
+    color: #064970;
+
+}
+
+.Appointments .upcoming-appointments{
+    background-color: #FFDFDB;
+    width: 40%;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    padding: 10px;
+}
+
+.Appointments .canceled-appointments{
+    background-color: #ccb7fd;
+    width: 40%;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    
+
+
+
+}
+
+
+.Appointments .canceled-appointments h3{
+    
+    color: #2e2368;
+
+}
+.footer{
+    margin: 5px 5px 10px 10px;
+    border-radius: 5px;
+    background-color: #181818;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-content:space-between;
+    align-items: center;
+    
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin: auto;
+}
+
+.footer i{
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer p{
+    color: #ffffff;
+}
+
+
+.main-container .right-container{
+    width: calc(100% - 70%);
+    background-color: #181818;
+    margin: 10px;
+    border-radius: 7px;
+    overflow: scroll;
+    padding: 5px;
+}
+
+.right-container::-webkit-scrollbar{
+    display: none;
+}
+
+.online-users{
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: scroll;
+}
+
+.online-users h4{
+    color: rgb(255, 247, 231);
+}
+
+.single-user{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-color: #383838;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    color: rgb(255, 247, 231);
+    border-radius: 7px;
+    /* position: relative; */
+}
+
+.single-user i{
+    background-color: #f75246;
+    padding: 5px 7px;
+    border-radius: 20px;
+}
+
+.single-user .patient-pp{
+    background-color: #4a3a9c;
+    padding: 5px 7px;
+    border-radius: 20px;
+}
+.single-user button{
+    background-color: #f75246;
+    border: none;
+    padding: 8px 15px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    /* position: absolute; */
+    right: 0;
+    margin: 9px;
+    cursor: pointer;
+    width: 12vw;
+}
+
+.doctor-online {
+    background-color: #f75246;
+    display: block;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 20px;
+    width: 5vw;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.patient-online {
+    background-color: #5946b6;
+    display: block;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 20px;
+    width: 5vw;
+    font-size: 14px;
+    cursor: pointer;
+
+
+
+}
+
+.users-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+
+}
