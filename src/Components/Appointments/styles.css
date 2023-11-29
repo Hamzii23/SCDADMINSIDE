@@ -1,0 +1,80 @@
+
+body{
+    margin: 20px;
+}
+
+p{
+    margin: 0;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-card{
+    width: 92vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #313131;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px 20px;
+    color: white;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.userpat-pp img{
+    width: 20px;
+    border: 2px solid #55479E;
+    padding: 7px 12px;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0;
+}
+
+.userdoc-pp img{
+    width: 20px;
+    border: 2px solid #F35041;
+    padding: 7px 12px;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0;
+}
+
+.user-name{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: flex-start;
+}
+
+.user-name .name{
+    font-size: 24px;
+}
+
+.user-name .email{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+
+.app-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

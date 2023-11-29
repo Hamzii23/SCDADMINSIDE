@@ -11,37 +11,37 @@ function LoginScreen() {
   const [password, setPassword] = useState("");
   const navigation = useNavigate();
   const handleSubmit = async (e) => {
-    console.log(email, password);
-    e.preventDefault();
+    // console.log(email, password);
+    // e.preventDefault();
 
-    try {
-      const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          "Content-Type": "application/json",
-        },
-      };
-      const data = {
-        email: email,
-        password: password,
-      };
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/user/login",
-        data,
-        config
-      );
-      if (response.error) {
-        return;
-      }
+    // try {
+    //   const config = {
+    //     headers: {
+    //       "Access-Control-Allow-Origin": "*",
+    //       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+    //       "Content-Type": "application/json",
+    //     },
+    //   };
+    //   const data = {
+    //     email: email,
+    //     password: password,
+    //   };
+    //   const response = await axios.post(
+    //     "http://192.168.100.8:3000/api/v1/user/login",
+    //     data,
+    //     config
+    //   );
+    //   if (response.error) {
+    //     return;
+    //   }
 
-      await localStorage.setItem("userData", JSON.stringify(response.data));
+    //   await localStorage.setItem("userData", JSON.stringify(response.data));
       navigation("/Dashboard");
-      console.log("Response:", response);
-    } catch (error) {
-      // Handle errors
-      console.warn("Error:", error);
-    }
+      // console.log("Response:", response);
+    // } catch (error) {
+    //   // Handle errors
+    //   console.warn("Error:", error);
+    // }
   };
   return (
     <div className="login-container">
