@@ -91,7 +91,7 @@ function Menu() {
 
           <ul className="sidebar-menu" id="sidebar-menu1">
             <li>
-              <a href="">
+              <a href="/">
                 <BiLogOut onClick={handleLogout} /> Logout
               </a>
             </li>

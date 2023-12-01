@@ -9,13 +9,17 @@ import PandingAppointment from "./Components/Appointments/pandingappointment";
 import ScheduledAppointments from "./Components/Appointments/ScheduledAppointments";
 import CancelledAppointment from "./Components/Appointments/cancelledAppointment";
 function App() {
+  // Retrieve user data from local storage
   var userData = window.localStorage.getItem("userData");
   userData = JSON.parse(userData);
-  const [isAuthenticated, setAuthenticated] = useState(
-    userData == null ? false : true
-  );
-  console.log(isAuthenticated);
-  useEffect(() => {}, [userData]);
+
+  // Use userData to set the initial state of isAuthenticated
+  const [isAuthenticated, setAuthenticated] = useState(userData !== null);
+
+  useEffect(() => {
+    // Update isAuthenticated state when userData changes
+    setAuthenticated(userData !== null);
+  }, [userData]);
 
   return (
     <Router>
@@ -23,7 +27,7 @@ function App() {
         {isAuthenticated && <Menu />}
         <div style={{ padding: "20px" }}>
           <Routes>
-            {isAuthenticated == false ? (
+            {isAuthenticated === false ? (
               <Route path="/" element={<LoginScreen />} />
             ) : (
               <Route path="/" element={<MainContainer />} />
@@ -40,10 +44,6 @@ function App() {
               path="/CancelledAppointment"
               element={<CancelledAppointment />}
             />
-            {/* <Route
-              path="/CancelledAppointment"
-              element={<CancelledAppointment />}
-            /> */}
           </Routes>
         </div>
       </div>

@@ -35,10 +35,9 @@ function LoginScreen() {
         return;
       }
 
-      await localStorage.setItem(
-        "userData",
-        JSON.stringify(response.data)
-      )(navigation("/"));
+      await localStorage.setItem("userData", JSON.stringify(response.data));
+      window.location.reload();
+      navigation("/");
 
       console.log("Response:", response);
     } catch (error) {
@@ -75,6 +74,7 @@ function LoginScreen() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+
         <button type="submit">Login</button>
       </form>
 
