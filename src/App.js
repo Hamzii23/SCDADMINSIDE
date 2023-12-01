@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import PandingAppointment from "./Components/Appointments/pandingappointment";
 import ScheduledAppointments from "./Components/Appointments/ScheduledAppointments";
 import CancelledAppointment from "./Components/Appointments/cancelledAppointment";
+import PatientRecrod from "./Components/Patient/PatientRecords/patientRecord";
 function App() {
   // Retrieve user data from local storage
   var userData = window.localStorage.getItem("userData");
@@ -44,6 +45,8 @@ function App() {
               path="/CancelledAppointment"
               element={<CancelledAppointment />}
             />
+            <Route path="/PatientRecrod" element={<PatientRecrod />} />
+            <Route path="/PatientProfile" element={<PatientProfile />} />
           </Routes>
         </div>
       </div>

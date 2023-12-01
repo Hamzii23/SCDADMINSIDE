@@ -100,11 +100,18 @@ function MainContainer() {
 
             <img src={Doctor} alt="" />
           </div>
-
           <div className="patient">
-            <h1>Patient Management</h1>
+            <button
+              style={{ backgroundColor: "#ccb7fd" }}
+              type="submit"
+              onClick={() => {
+                navigation("/PatientRecrod");
+              }}
+            >
+              <h1>Patient Management</h1>
 
-            <img src={Doctor} alt="" />
+              <img src={Doctor} alt="" />
+            </button>
           </div>
         </div>
 
