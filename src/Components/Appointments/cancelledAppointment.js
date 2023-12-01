@@ -11,22 +11,24 @@ import {
 } from "react-icons/bs";
 import axios from "axios";
 
-const PandingAppointment = () => {
-  const [pandingappointment, setPandingAppointment] = useState([]);
+const CancelledAppointment = () => {
+  const [canceledappointment, setcanceledAppointment] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         var userData = await window.localStorage.getItem("userData");
         userData = JSON.parse(userData);
+
         const response = await axios.get(
-          "http://localhost:3000/api/v1/admin/appointments",
+          "http://localhost:3000/api/v1/admin/CancelledAppointments",
+
           {
             headers: {
               Authorization: `Bearer ${userData.token}`,
             },
           }
         );
-        setPandingAppointment(response.data.allAppointments);
+        setcanceledAppointment(response.data.allAppointments);
         console.log(response.data);
       } catch (error) {
         // Handle error
@@ -38,7 +40,7 @@ const PandingAppointment = () => {
   }, []);
   return (
     <div className="main">
-      {pandingappointment.map((appointment) => (
+      {canceledappointment.map((appointment) => (
         <div key={appointment._id} className="app-card">
           <div className="user-info">
             <div className="userdoc-pp">
@@ -56,7 +58,7 @@ const PandingAppointment = () => {
 
           <div className="app-date">
             <p className="time">{appointment.appointmenttimeSlot}</p>
-            <p className="day"> </p>
+            <p className="day">Date </p>
             <p className="date">
               {new Date(appointment.appointmentdate).toLocaleDateString()}
             </p>
@@ -84,4 +86,4 @@ const PandingAppointment = () => {
     // </div>
   );
 };
-export default PandingAppointment;
+export default CancelledAppointment;

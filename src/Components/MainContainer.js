@@ -60,6 +60,9 @@ function MainContainer() {
                   color: "#0c7dbece",
                   paddingLeft: "5px",
                 }}
+                onClick={() => {
+                  navigation("ScheduledAppointments");
+                }}
               />
             </div>
           </div>
@@ -80,6 +83,10 @@ function MainContainer() {
                   color: "#4a3b96cc",
                   paddingLeft: "5px",
                 }}
+                onClick={() => {
+                  navigation("CancelledAppointment");
+                }}
+                CancelledAppointment
               />
             </div>
           </div>
