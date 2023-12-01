@@ -1,8 +1,71 @@
-.main{
+/* .main{
     display: flex;
     flex: 1;
     width :150vh; height:95vh ;
 }
 .innerDiv h2{
     color: #2e2368;
+} */
+
+.main-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10;
+    align-items: flex-start;
+
+}
+
+.main-card{
+    width: 71vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #313131;
+    /* margin: auto; */
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    gap: 10px;
+}
+
+.user-pic img{
+    width: 20px;
+    border: 2px solid #55479E;
+    padding: 7px 12px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px -2px 0px;
+}
+
+.buttons{
+    display: flex;
+}
+
+.buttons .delete{
+    background-color: transparent;
+    border: 1px solid #F35041;
+    width: 10vw;
+    color: #F35041;
+    
+}
+
+.buttons .active{
+    background-color: #F35041;
+    border: 1px solid #F35041;
+    width: 10vw;
+    
+}
+
+.buttons .view-profile{
+    background-color: #4A3B96;
+    width: 10vw;
 }
