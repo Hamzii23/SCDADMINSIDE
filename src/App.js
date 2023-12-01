@@ -11,8 +11,9 @@ import CancelledAppointment from "./Components/Appointments/cancelledAppointment
 import PatientRecrod from "./Components/Patient/PatientRecords/patientRecord";
 function App() {
   // Retrieve user data from local storage
-  var userData = window.localStorage.getItem("userData");
-  userData = JSON.parse(userData);
+  // var userData = window.localStorage.getItem("userData");
+  var userData = "anbsdnasbdmanbdmbna";
+  // userData = JSON.parse(userData);
 
   // Use userData to set the initial state of isAuthenticated
   const [isAuthenticated, setAuthenticated] = useState(userData !== null);
