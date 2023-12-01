@@ -1,14 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../Appointments/styles.css";
-import Doctor from "../../Images/doctor svg.svg";
-
-import {
-  BsFillCalendar2CheckFill,
-  BsFillCalendarXFill,
-  BsFillCalendar2PlusFill,
-  BsFillCalendar2XFill,
-  BsPersonFillGear,
-} from "react-icons/bs";
 import axios from "axios";
 
 const PandingAppointment = () => {

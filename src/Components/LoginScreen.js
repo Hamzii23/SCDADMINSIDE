@@ -13,7 +13,6 @@ function LoginScreen() {
   const handleSubmit = async (e) => {
     // console.log(email, password);
     // e.preventDefault();
-
     // try {
     //   const config = {
     //     headers: {
@@ -39,7 +38,7 @@ function LoginScreen() {
     //   window.location.reload();
     navigation("/");
 
-    // console.log("Response:", response);
+    //   console.log("Response:", response);
     // } catch (error) {
     //   // Handle errors
     //   console.warn("Error:", error);

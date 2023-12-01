@@ -10,16 +10,13 @@ import ScheduledAppointments from "./Components/Appointments/ScheduledAppointmen
 import CancelledAppointment from "./Components/Appointments/cancelledAppointment";
 import PatientRecrod from "./Components/Patient/PatientRecords/patientRecord";
 function App() {
-  // Retrieve user data from local storage
   // var userData = window.localStorage.getItem("userData");
-  var userData = "anbsdnasbdmanbdmbna";
+  var userData = "asdadadads";
   // userData = JSON.parse(userData);
 
-  // Use userData to set the initial state of isAuthenticated
   const [isAuthenticated, setAuthenticated] = useState(userData !== null);
 
   useEffect(() => {
-    // Update isAuthenticated state when userData changes
     setAuthenticated(userData !== null);
   }, [userData]);
 
@@ -27,7 +24,7 @@ function App() {
     <Router>
       <div style={{ display: "flex", height: "100vh" }}>
         {isAuthenticated && <Menu />}
-        <div style={{ padding: "20px" }}>
+        <div style={{ padding: "20px", flex: 1 }}>
           <Routes>
             {isAuthenticated === false ? (
               <Route path="/" element={<LoginScreen />} />

@@ -17,7 +17,7 @@ p{
 }
 
 .app-card{
-    width: 73vw;
+    width: 70vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
