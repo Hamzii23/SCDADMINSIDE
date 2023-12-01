@@ -10,7 +10,9 @@ body{
     justify-content:center;
     gap: 140px;
     align-items: center;
-    height: 115vh;
+    height: 100vh;
+    align-self: center;
+    width: 200vh;
 
   }
   

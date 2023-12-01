@@ -39,7 +39,7 @@ const CancelledAppointment = () => {
     fetchData();
   }, []);
   return (
-    <div className="main">
+    <div className="main" style={{ height: "100%" }}>
       {canceledappointment.map((appointment) => (
         <div key={appointment._id} className="app-card">
           <div className="user-info">

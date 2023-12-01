@@ -1,21 +1,23 @@
 
 body{
     margin: 20px;
+    
 }
 
 p{
     margin: 0;
 }
 
-
 .main{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow: hidden;
+    overflow:scroll;
 }
 
 .app-card{
-    width: 92vw;
+    width: 73vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

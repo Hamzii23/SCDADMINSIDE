@@ -18,8 +18,10 @@ import {
 import { FaHome, Fa500Px, FaCog, FaBackspace } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import MainContainer from "./MainContainer";
+import { useNavigate } from "react-router-dom";
 
 function Menu() {
+  const navigation = useNavigate();
   useEffect(() => {
     const mainmenuLI = document
       .getElementById("sidebar-menu")
@@ -45,6 +47,13 @@ function Menu() {
 
     mainmenuLI.forEach((n) => n.addEventListener("click", changeActive));
   }, []);
+  const handleLogout = () => {
+    // Remove user data from local storage
+    localStorage.removeItem("userData");
+
+    // Redirect to the home page or login page
+    navigation("/");
+  };
   return (
     <div className="outerDiv">
       <menu className="div1">
@@ -57,8 +66,9 @@ function Menu() {
         <div className="lists">
           <ul className="sidebar-menu" id="sidebar-menu">
             <li>
-              <a href="#">
-                <FaHome /> Dashboard
+              <a href="/">
+                <FaHome />
+                Dashboard
               </a>
             </li>
             <li>
@@ -81,14 +91,14 @@ function Menu() {
 
           <ul className="sidebar-menu" id="sidebar-menu1">
             <li>
-              <a href="#">
-                <BiLogOut /> Logout
+              <a href="">
+                <BiLogOut onClick={handleLogout} /> Logout
               </a>
             </li>
           </ul>
         </div>
       </menu>
-      <MainContainer />
+      {/* <MainContainer /> */}
     </div>
   );
 }
