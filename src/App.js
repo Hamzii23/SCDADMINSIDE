@@ -9,10 +9,12 @@ import PandingAppointment from "./Components/Appointments/pandingappointment";
 import ScheduledAppointments from "./Components/Appointments/ScheduledAppointments";
 import CancelledAppointment from "./Components/Appointments/cancelledAppointment";
 import PatientRecrod from "./Components/Patient/PatientRecords/patientRecord";
+import DoctorRecord from "./Components/Doctor/DoctorRecord";
+import DoctorProfile from "./Components/Doctor/Doctor.Profile/DoctorProfile";
 function App() {
-  // var userData = window.localStorage.getItem("userData");
-  var userData = "asdadadads";
-  // userData = JSON.parse(userData);
+  var userData = window.localStorage.getItem("userData");
+  // var userData = "asdadadads";
+  userData = JSON.parse(userData);
 
   const [isAuthenticated, setAuthenticated] = useState(userData !== null);
 
@@ -44,7 +46,9 @@ function App() {
               element={<CancelledAppointment />}
             />
             <Route path="/PatientRecrod" element={<PatientRecrod />} />
+            <Route path="/DoctorRecord" element={<DoctorRecord />} />
             <Route path="/PatientProfile" element={<PatientProfile />} />
+            <Route path="/DoctorProfile" element={<DoctorProfile />} />
           </Routes>
         </div>
       </div>

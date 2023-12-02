@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../PatientRecords/patientRecrodStyle.css";
-import Profile from "../../../Images/doctor svg.svg";
+import "../Doctor/DoctorRecrodStyle.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function PatientRecord() {
+function DoctorRecord() {
   const navigation = useNavigate();
-  const [PatientRecord, setPatientRecord] = useState([]);
+  const [DoctorRecord, setDoctorRecord] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -14,14 +13,14 @@ function PatientRecord() {
         userData = JSON.parse(userData);
 
         const response = await axios.get(
-          "http://localhost:3000/api/v1/admin/AllUsers/PATIENT",
+          "http://localhost:3000/api/v1/admin/AllUsers/DOCTOR",
           {
             headers: {
               Authorization: `Bearer ${userData.token}`,
             },
           }
         );
-        setPatientRecord(response.data.data);
+        setDoctorRecord(response.data.data);
         // console.log(response.data);
       } catch (error) {
         // Handle error
@@ -33,7 +32,7 @@ function PatientRecord() {
   }, []);
   const handleProfile = async (records) => {
     await localStorage.setItem("userRecords", JSON.stringify(records));
-    navigation(`/PatientProfile`);
+    navigation(`/DoctorProfile`);
   };
   const handleDeactivated = async (records) => {
     var userData = await window.localStorage.getItem("userData");
@@ -78,8 +77,8 @@ function PatientRecord() {
   };
   return (
     <div className="main-section">
-      <h3>Patient Mangement</h3>
-      {PatientRecord.map((records) => (
+      <h3>Doctor Mangement</h3>
+      {DoctorRecord.map((records) => (
         <div className="main-card">
           <div className="user-info">
             <div className="user-pic">
@@ -93,11 +92,20 @@ function PatientRecord() {
                 alt=""
               />
             </div>
-            <div className="user-name">
+            <div className="user-name" style={{ width: 250 }}>
               <p className="name">{records?.name}</p>
               <p className="email">{records?.email}</p>
             </div>
           </div>
+          <p
+            style={{
+              alignSelf: "center",
+              textAlign: "center",
+              color: records.isApproved == "panding" ? "orange" : "green",
+            }}
+          >
+            {records.isApproved}
+          </p>
 
           <div className="buttons">
             <button
@@ -129,4 +137,4 @@ function PatientRecord() {
   );
 }
 
-export default PatientRecord;
+export default DoctorRecord;
