@@ -29,7 +29,7 @@ const PandingAppointment = () => {
   }, []);
   return (
     <div className="main">
-      {pandingappointment.map((appointment) => (
+      {pandingappointment?.map((appointment) => (
         <div key={appointment._id} className="app-card">
           <div className="user-info">
             <div className="userdoc-pp">

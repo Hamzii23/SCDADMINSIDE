@@ -77,8 +77,8 @@ function Menu() {
               </a>
             </li>
             <li>
-              <a href="#">
-                <FaMessage /> Messages
+              <a href="/ArticlesRecord">
+                <FaMessage /> Articles
               </a>
             </li>
 

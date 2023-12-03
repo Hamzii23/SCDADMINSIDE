@@ -21,6 +21,9 @@ function LoginScreen() {
           "Content-Type": "application/json",
         },
       };
+      if (!email || !password) {
+        alert("Email or Passoword is Missing");
+      }
       const data = {
         email: email,
         password: password,

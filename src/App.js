@@ -11,6 +11,8 @@ import CancelledAppointment from "./Components/Appointments/cancelledAppointment
 import PatientRecrod from "./Components/Patient/PatientRecords/patientRecord";
 import DoctorRecord from "./Components/Doctor/DoctorRecord";
 import DoctorProfile from "./Components/Doctor/Doctor.Profile/DoctorProfile";
+import Articles from "./Components/AddArticles/Atricles";
+import ArticlesRecord from "./Components/ArticalesView/ArticalesView";
 function App() {
   var userData = window.localStorage.getItem("userData");
   // var userData = "asdadadads";
@@ -45,6 +47,8 @@ function App() {
               path="/CancelledAppointment"
               element={<CancelledAppointment />}
             />
+            <Route path="/ArticlesRecord" element={<ArticlesRecord />} />
+            <Route path="/Articles" element={<Articles />} />
             <Route path="/PatientRecrod" element={<PatientRecrod />} />
             <Route path="/DoctorRecord" element={<DoctorRecord />} />
             <Route path="/PatientProfile" element={<PatientProfile />} />

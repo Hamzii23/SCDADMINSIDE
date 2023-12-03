@@ -21,7 +21,16 @@ function MainContainer() {
       <div className="left-container">
         <div className="Appointments">
           <div className="upcoming-appointments">
-            <h3 style={{ fontSize: 30 }}>Pending Appointments</h3>
+            <h3
+              style={{
+                fontSize: 30,
+                color: "#8f251e",
+                width: "40%",
+                marginLeft: 70,
+              }}
+            >
+              Pending Appointments
+            </h3>
             <div
               style={{
                 display: "flex",
@@ -67,7 +76,9 @@ function MainContainer() {
             </div>
           </div>
           <div className="canceled-appointments">
-            <h3 style={{ fontSize: 30 }}>Cancelled Appointments</h3>
+            <h3 style={{ fontSize: 30, width: "40%", marginLeft: 70 }}>
+              Cancelled Appointments
+            </h3>
             <div
               style={{
                 display: "flex",
@@ -93,16 +104,15 @@ function MainContainer() {
         </div>
 
         <div className="doctor-patient">
-          <div className="doctor">
+          <div className="patient" style={{ backgroundColor: "#FFDFDB" }}>
             <button
-              style={{ backgroundColor: "#ccb7fd" }}
+              style={{ backgroundColor: "#FFDFDB" }}
               type="submit"
               onClick={() => {
                 navigation("/DoctorRecord");
               }}
             >
               <h1>Doctor Management</h1>
-
               <img src={Doctor} alt="" />
             </button>
           </div>

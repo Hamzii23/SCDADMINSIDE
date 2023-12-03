@@ -1,0 +1,83 @@
+.main-bg{
+    width: 100%;
+}
+
+
+
+
+  
+  /* ArticleForm.css */
+
+.article-form {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    /* max-width: 400px; */
+    margin: auto;
+    /* margin-top: 50px; */
+    /* box-sizing: border-box; */
+    height: 100vh;
+  }
+  
+  .article-form div {
+    /* margin-bottom: 15px; */
+  }
+  
+  .article-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .article-form input,
+  .article-form textarea,
+  .article-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+  }
+
+  .article-form select:focus {
+   
+    color: black;
+    background-color: rgba(59, 59, 59, 0);
+
+   
+  }
+  
+  .article-form button {
+    background-color: #ff5f54;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  
+  .article-form .file-upload-btn {
+    background-color: #ff5f54;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  .article-form .file-name {
+    margin-top: 5px;
+    font-size: 14px;
+  }
