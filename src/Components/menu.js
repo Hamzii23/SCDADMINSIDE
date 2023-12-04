@@ -59,11 +59,7 @@ function Menu() {
                 Dashboard
               </a>
             </li>
-            <li>
-              <a href="#">
-                <FaUser /> Profile
-              </a>
-            </li>
+
             <li>
               <a href="/ArticlesRecord">
                 <FaMessage /> Articles
