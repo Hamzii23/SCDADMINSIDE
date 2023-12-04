@@ -2,22 +2,10 @@ import React, { useEffect } from "react";
 import "./menu.css";
 
 import Logo from "../Images/NewLogo.png";
-import LogoNew from "../Images/deCancer new logo.png";
 
-import {
-  FaCopyright,
-  FaBlackberry,
-  FaDigg,
-  FaBuffer,
-  FaCalculator,
-  FaBell,
-  FaMessage,
-  FaPersonRifle,
-  FaUser,
-} from "react-icons/fa6";
-import { FaHome, Fa500Px, FaCog, FaBackspace } from "react-icons/fa";
+import { FaMessage, FaUser } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
-import MainContainer from "./MainContainer";
 import { useNavigate } from "react-router-dom";
 
 function Menu() {
@@ -83,8 +71,8 @@ function Menu() {
             </li>
 
             <li>
-              <a href="#">
-                <FaCog /> Settings
+              <a href="/ComplainsRecord">
+                <FaMessage /> User Complains
               </a>
             </li>
           </ul>
