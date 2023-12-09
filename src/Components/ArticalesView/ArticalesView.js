@@ -87,7 +87,7 @@ function ArticlesRecord() {
           style={{
             backgroundColor: "#313131",
             width: "100%",
-            flex: 1,
+            flex: 0.2,
             padding: 10,
           }}
         >

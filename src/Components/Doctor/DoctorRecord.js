@@ -215,7 +215,7 @@ function DoctorRecord() {
                     alignSelf: "center",
                     textAlign: "center",
                     textTransform: "uppercase",
-                    color: records.isApproved == "panding" ? "orange" : "green",
+                    color: records.isApproved == "pending" ? "orange" : "green",
                   }}
                 >
                   {records.isApproved}

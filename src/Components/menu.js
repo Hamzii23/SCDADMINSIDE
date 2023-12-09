@@ -45,14 +45,7 @@ function Menu() {
   return (
     <div className="outerDiv">
       <menu className="div1">
-        <div
-          className="logo-place"
-          style={{
-            backgroundColor: "#4A3B96",
-            marginTop: 10,
-            borderRadius: 15,
-          }}
-        >
+        <div className="logo-place">
           {/* <i><Fa500Px /></i> */}
 
           <img src={Logo} alt="Logo" />

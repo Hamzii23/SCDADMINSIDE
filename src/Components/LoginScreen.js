@@ -81,18 +81,7 @@ function LoginScreen() {
         <button type="submit">Login</button>
       </form>
 
-      <div
-        style={{
-          backgroundColor: "#4A3B96",
-          marginTop: 10,
-          borderRadius: 15,
-          width: "20%",
-          justifyContent: "center",
-          display: "flex",
-          alignItems: "center",
-          paddingTop: 15,
-        }}
-      >
+      <div>
         <img src={Logo} alt="Logo" />
       </div>
     </div>

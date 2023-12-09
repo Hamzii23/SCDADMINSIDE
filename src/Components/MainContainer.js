@@ -112,8 +112,10 @@ function MainContainer() {
                 navigation("/DoctorRecord");
               }}
             >
+              <i>
+                <FaUserDoctor fontSize={100} color="#f75246ce" />
+              </i>
               <h1>Doctor Management</h1>
-              <img src={Doctor} alt="" />
             </button>
           </div>
           <div className="patient">
@@ -124,9 +126,11 @@ function MainContainer() {
                 navigation("/PatientRecrod");
               }}
             >
-              <h1>Patient Management</h1>
+              <i>
+                <FaUserDoctor fontSize={100} color="#4a3b96cc" />
+              </i>
 
-              <img src={Doctor} alt="" />
+              <h1>Patient Management</h1>
             </button>
           </div>
         </div>
@@ -136,7 +140,11 @@ function MainContainer() {
             <i>
               <FaCopyright />
             </i>
-            <p> deCancer, A skin cancer detection application.</p>
+            <p>
+              {" "}
+              Skin Cancer Detection & Classification, A skin cancer detection
+              application.
+            </p>
           </div>
         </div>
       </div>
