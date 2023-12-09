@@ -45,7 +45,14 @@ function Menu() {
   return (
     <div className="outerDiv">
       <menu className="div1">
-        <div className="logo-place">
+        <div
+          className="logo-place"
+          style={{
+            backgroundColor: "#4A3B96",
+            marginTop: 10,
+            borderRadius: 15,
+          }}
+        >
           {/* <i><Fa500Px /></i> */}
 
           <img src={Logo} alt="Logo" />
@@ -69,6 +76,11 @@ function Menu() {
             <li>
               <a href="/ComplainsRecord">
                 <FaMessage /> User Complains
+              </a>
+            </li>
+            <li>
+              <a href="/FeedBackRecord">
+                <FaMessage /> Users FeedBack
               </a>
             </li>
           </ul>

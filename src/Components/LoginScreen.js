@@ -34,6 +34,7 @@ function LoginScreen() {
         config
       );
       if (response.error) {
+        alert("Email or Password Incorrect");
         return;
       }
 
@@ -80,7 +81,18 @@ function LoginScreen() {
         <button type="submit">Login</button>
       </form>
 
-      <div>
+      <div
+        style={{
+          backgroundColor: "#4A3B96",
+          marginTop: 10,
+          borderRadius: 15,
+          width: "20%",
+          justifyContent: "center",
+          display: "flex",
+          alignItems: "center",
+          paddingTop: 15,
+        }}
+      >
         <img src={Logo} alt="Logo" />
       </div>
     </div>

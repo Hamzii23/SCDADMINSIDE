@@ -14,6 +14,7 @@ import DoctorProfile from "./Components/Doctor/Doctor.Profile/DoctorProfile";
 import Articles from "./Components/AddArticles/Atricles";
 import ArticlesRecord from "./Components/ArticalesView/ArticalesView";
 import ComplainsRecord from "./Components/complains/complainRecord/complainRecord";
+import FeedBackRecord from "./Components/UserFeedBack/feedback";
 function App() {
   var userData = window.localStorage.getItem("userData");
   // var userData = "asdadadads";
@@ -55,6 +56,7 @@ function App() {
             <Route path="/PatientProfile" element={<PatientProfile />} />
             <Route path="/DoctorProfile" element={<DoctorProfile />} />
             <Route path="/ComplainsRecord" element={<ComplainsRecord />} />
+            <Route path="/FeedBackRecord" element={<FeedBackRecord />} />
           </Routes>
         </div>
       </div>

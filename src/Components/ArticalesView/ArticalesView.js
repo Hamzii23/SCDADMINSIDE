@@ -62,16 +62,18 @@ function ArticlesRecord() {
       <div
         style={{
           flexDirection: "row",
-          width: "140%",
-          alignItems: "center",
+          width: "99%",
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        <h3 style={{ marginRight: "85%" }}>Articles Mangement</h3>
+        <h3>Articles Mangements</h3>
         <button
           style={{
-            width: 100,
+            width: "10%",
             backgroundColor: "green",
-            marginLeft: "90%",
+            height: 40,
+            marginTop: 10,
           }}
           onClick={() => {
             handleAdd("");
@@ -81,40 +83,109 @@ function ArticlesRecord() {
         </button>
       </div>
       {ArticlesRecord?.map((articles) => (
-        <div className="main-card">
-          <div className="user-info">
-            <div className="user-pic">
+        <div
+          style={{
+            backgroundColor: "#313131",
+            width: "100%",
+            flex: 1,
+            padding: 10,
+          }}
+        >
+          <div style={{ height: "100%", width: "100%", display: "flex" }}>
+            <div
+              style={{
+                height: 120,
+                width: 100,
+                padding: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#4A3B96",
+              }}
+            >
               <img
-                style={{ width: 35, height: 40 }}
+                style={{ width: 100, height: 120 }}
                 src={`http://localhost:3000/public/img/articles/${articles.postImage}`}
                 alt=""
               />
             </div>
-            <div className="user-name" style={{ width: 250 }}>
-              <p className="name">{articles?.title}</p>
-              <p className="email" style={{ width: "250%" }}>
-                {articles?.shortDescrition}
+            <div
+              style={{
+                height: "80%",
+                width: "80%",
+                padding: 20,
+              }}
+            >
+              <p
+                style={{
+                  color: "#fff",
+                  marginTop: 5,
+                  fontSize: 15,
+                  display: "flex",
+                  fontWeight: "bold",
+                }}
+              >
+                Article Title:{" "}
+                <p
+                  style={{
+                    color: "#fff",
+                    fontSize: 14,
+                    fontWeight: "normal",
+                  }}
+                >
+                  {articles?.title}
+                </p>
+              </p>
+              <p
+                style={{
+                  marginTop: 5,
+                  color: "#fff",
+                  fontSize: 15,
+                  display: "flex",
+                  fontWeight: "bold",
+                }}
+              >
+                Descrition:{" "}
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: "normal",
+                  }}
+                >
+                  {articles?.shortDescrition}
+                </p>
               </p>
             </div>
-          </div>
-
-          <div className="buttons">
-            <button
-              className="delete"
-              onClick={() => {
-                handleDelete(articles);
+            <div
+              className="buttons"
+              style={{
+                width: "40%",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              Delete Record
-            </button>
-            <button
-              className="active"
-              onClick={() => {
-                handleEdit(articles);
-              }}
-            >
-              Edit
-            </button>
+              <button
+                className="delete"
+                style={{ height: 50, backgroundColor: "red", color: "#fff" }}
+                onClick={() => {
+                  handleDelete(articles);
+                }}
+              >
+                Delete Record
+              </button>
+              <button
+                className="active"
+                style={{
+                  height: 50,
+                  backgroundColor: "#4A3B96",
+                  color: "#fff",
+                }}
+                onClick={() => {
+                  handleEdit(articles);
+                }}
+              >
+                Edit
+              </button>
+            </div>
           </div>
         </div>
       ))}

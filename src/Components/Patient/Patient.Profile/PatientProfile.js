@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Doctor from "../../../Images/doctor svg.svg";
 import "./PatientProfile.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 function PatientProfile() {
+  const navigation = useNavigate();
   const [userProfile, setUserProfile] = useState({}); // Set initial value to an empty object
 
   useEffect(() => {
@@ -14,17 +16,44 @@ function PatientProfile() {
 
     setUserProfile(parsedData);
   }, []);
+  const handleDelete = async (userProfile) => {
+    var userData = await window.localStorage.getItem("userData");
+    userData = JSON.parse(userData);
+    const response = await axios.delete(
+      `http://localhost:3000/api/v1/admin/delete/${userProfile._id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${userData.token}`,
+        },
+      }
+    );
+    if (response.error) {
+      alert("NetWork Problem");
+    }
+    alert("Record Deleted");
+    navigation("/PatientRecrod");
+  };
   return (
     <section className="main-section">
-      <div className="first">
-        <div className="first-left">
-          {/* <i>
-            <BsFillCalendar2XFill />
-          </i> */}
-          <p>{userProfile.name}</p>
-        </div>
-        <div>
+      <div
+        style={{
+          width: "100%",
+          height: "30%",
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            height: 150,
+            width: 120,
+            padding: 10,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#313131",
+          }}
+        >
           <img
+            style={{ width: 120, height: 150 }}
             src={
               userProfile.profileImage == null
                 ? `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo-_-3mhBNtLmon5LbNiPXhxMGdqHlaBGLiDElxbNWBA&s`
@@ -33,6 +62,28 @@ function PatientProfile() {
             alt=""
           />
         </div>
+        <p
+          style={{
+            color: "#fff",
+            marginTop: 5,
+            fontSize: 15,
+            display: "flex",
+            fontWeight: "bold",
+            width: "20%",
+            height: "10%",
+            marginLeft: 10,
+          }}
+        >
+          Name:{" "}
+          <p
+            style={{
+              fontSize: 14,
+              fontWeight: "normal",
+            }}
+          >
+            {userProfile.name}
+          </p>
+        </p>
       </div>
       <div className="second">
         <div className="card-1">
@@ -80,11 +131,40 @@ function PatientProfile() {
           </p>
         </div>
       </div>
+      <div className="third">
+        <div
+          className="card-1"
+          style={{
+            width: "40%",
+            backgroundColor: userProfile.active == true ? "green" : "orange",
+          }}
+        >
+          <p className="sub-text">Status</p>
+          <p className="main-text">
+            {userProfile.active == true ? "Activeted" : "Deactiveted"}
+          </p>
+        </div>
+
+        <div className="card-1">
+          <p className="sub-text">Skin Allergy</p>
+          <p className="main-text">
+            {userProfile?.allergyType == null
+              ? "Not Selected"
+              : userProfile?.allergyType}
+          </p>
+        </div>
+      </div>
       <div className="buttons">
-        <button className="button-2">Delete Records</button>
+        <button
+          className="button-2"
+          onClick={() => {
+            handleDelete(userProfile);
+          }}
+        >
+          Delete Records
+        </button>
         <br />
         <br />
-        <button className="button-1">Edit Records</button>
       </div>
     </section>
   );

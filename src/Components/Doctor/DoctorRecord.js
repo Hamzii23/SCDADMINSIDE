@@ -76,14 +76,30 @@ function DoctorRecord() {
     window.location.reload();
   };
   return (
-    <div className="main-section">
+    <div className="main-section" style={{ height: "100%" }}>
       <h3>Doctor Mangement</h3>
       {DoctorRecord.map((records) => (
-        <div className="main-card">
-          <div className="user-info">
-            <div className="user-pic">
+        <div
+          style={{
+            backgroundColor: "#313131",
+            width: "100%",
+            flex: 0.2,
+            padding: 10,
+          }}
+        >
+          <div style={{ height: "100%", width: "100%", display: "flex" }}>
+            <div
+              style={{
+                height: 120,
+                width: 100,
+                padding: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#4A3B96",
+              }}
+            >
               <img
-                style={{ width: 35, height: 40 }}
+                style={{ width: 100, height: 120 }}
                 src={
                   records.profileImage == null
                     ? `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo-_-3mhBNtLmon5LbNiPXhxMGdqHlaBGLiDElxbNWBA&s`
@@ -92,44 +108,162 @@ function DoctorRecord() {
                 alt=""
               />
             </div>
-            <div className="user-name" style={{ width: 250 }}>
-              <p className="name">{records?.name}</p>
-              <p className="email">{records?.email}</p>
+            <div
+              style={{
+                height: "80%",
+                width: "100%",
+                padding: 10,
+              }}
+            >
+              <p
+                style={{
+                  color: "#fff",
+                  marginTop: 5,
+                  fontSize: 15,
+                  display: "flex",
+                  fontWeight: "bold",
+                }}
+              >
+                Name:{" "}
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: "normal",
+                  }}
+                >
+                  {records?.name}
+                </p>
+              </p>
+              <p
+                style={{
+                  color: "#fff",
+                  marginTop: 5,
+                  fontSize: 15,
+                  display: "flex",
+                  fontWeight: "bold",
+                }}
+              >
+                Email:{" "}
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: "normal",
+                  }}
+                >
+                  {records?.email}
+                </p>
+              </p>
+              <p
+                style={{
+                  color: "#fff",
+                  marginTop: 5,
+                  fontSize: 15,
+                  display: "flex",
+                  fontWeight: "bold",
+                }}
+              >
+                Phone No:
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: "normal",
+                  }}
+                >
+                  {records?.phoneNo}
+                </p>
+              </p>
+              <p
+                style={{
+                  color: "#fff",
+                  marginTop: 5,
+                  fontSize: 15,
+                  display: "flex",
+                  fontWeight: "bold",
+                }}
+              >
+                UserType:{" "}
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: "normal",
+                  }}
+                >
+                  {records?.userType}
+                </p>
+              </p>
             </div>
-          </div>
-          <p
-            style={{
-              alignSelf: "center",
-              textAlign: "center",
-              color: records.isApproved == "panding" ? "orange" : "green",
-            }}
-          >
-            {records.isApproved}
-          </p>
-
-          <div className="buttons">
-            <button
-              className="delete"
-              onClick={() => {
-                handleDelete(records);
+            <div
+              style={{
+                width: "40%",
+                height: "40%",
+                marginRight: "7%",
+                marginTop: "4%",
               }}
             >
-              Delete Record
-            </button>
-            <button
-              className="active"
-              onClick={() => {
-                handleDeactivated(records);
+              <p
+                style={{
+                  color: "#fff",
+                  fontSize: 15,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                Status of Doctor
+                <p
+                  style={{
+                    marginTop: 5,
+                    alignSelf: "center",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                    color: records.isApproved == "panding" ? "orange" : "green",
+                  }}
+                >
+                  {records.isApproved}
+                </p>
+              </p>
+            </div>
+            <div
+              className="buttons"
+              style={{
+                width: "40%",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              {records.active == true ? "Deactive" : "Active"}
-            </button>
-            <button
-              className="view-profile"
-              onClick={() => handleProfile(records)}
-            >
-              View Profile
-            </button>
+              <button
+                className="delete"
+                style={{ height: 50, backgroundColor: "red", color: "#fff" }}
+                onClick={() => {
+                  handleDelete(records);
+                }}
+              >
+                Delete Record
+              </button>
+              <button
+                className="delete"
+                style={{
+                  height: 50,
+                  backgroundColor: records.active == true ? "green" : "orange",
+                  color: "#fff",
+                }}
+                onClick={() => {
+                  handleDeactivated(records);
+                }}
+              >
+                {records.active == true ? "Deactive" : "Active"}
+              </button>
+              <button
+                className="active"
+                style={{
+                  height: 50,
+                  backgroundColor: "#4A3B96",
+                  color: "#fff",
+                }}
+                onClick={() => handleProfile(records)}
+              >
+                View Profile
+              </button>
+            </div>
           </div>
         </div>
       ))}

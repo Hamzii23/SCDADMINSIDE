@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "../complainRecord/complainStyles.css";
+import "../UserFeedBack/feedbackStyles.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function ComplainsRecord() {
+function FeedBackRecord() {
   const navigation = useNavigate();
-  const [ComplainsRecord, setComplainsRecord] = useState([]);
-  const [expandedCards, setExpandedCards] = useState([]);
+  const [FeedBackRecord, setFeedBackRecord] = useState([]);
 
-  const handleExpandClick = (index) => {
-    // Toggle the expanded state for the clicked card
-    setExpandedCards((prevExpandedCards) => {
-      const newExpandedCards = [...prevExpandedCards];
-      newExpandedCards[index] = !newExpandedCards[index];
-      return newExpandedCards;
-    });
-  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,14 +14,14 @@ function ComplainsRecord() {
         userData = JSON.parse(userData);
 
         const response = await axios.get(
-          "http://localhost:3000/api/v1/admin/complains",
+          "http://localhost:3000/api/v1/admin/allFeedBack",
           {
             headers: {
               Authorization: `Bearer ${userData.token}`,
             },
           }
         );
-        setComplainsRecord(response.data.allComplains);
+        setFeedBackRecord(response.data.allFeedBack);
         console.log(response.data);
       } catch (error) {
         // Handle error
@@ -40,10 +31,11 @@ function ComplainsRecord() {
 
     fetchData();
   }, []);
+  console.log(FeedBackRecord);
   return (
     <div className="main-section">
-      <h3>Users Complains</h3>
-      {ComplainsRecord?.map((records) => (
+      <h3>Users FeedBacks After Meetings</h3>
+      {FeedBackRecord?.map((records) => (
         <div
           style={{
             backgroundColor: "#313131",
@@ -68,15 +60,15 @@ function ComplainsRecord() {
                   padding: 10,
                   justifyContent: "center",
                   alignItems: "center",
-                  backgroundColor: "#4A3B96",
+                  backgroundColor: "#313131",
                 }}
               >
                 <img
                   style={{ width: 120, height: 150 }}
                   src={
-                    records.userId.profileImage == null
+                    records.complainFrom.profileImage == null
                       ? `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo-_-3mhBNtLmon5LbNiPXhxMGdqHlaBGLiDElxbNWBA&s`
-                      : `http://localhost:3000/public/img/profile/${records.userId.profileImage}`
+                      : `http://localhost:3000/public/img/profile/${records.complainFrom.profileImage}`
                   }
                   alt=""
                 />
@@ -104,7 +96,7 @@ function ComplainsRecord() {
                       fontWeight: "normal",
                     }}
                   >
-                    {records?.userId.name}
+                    {records?.complainFrom.name}
                   </p>
                 </p>
                 <p
@@ -123,7 +115,7 @@ function ComplainsRecord() {
                       fontWeight: "normal",
                     }}
                   >
-                    {records?.userId.email}
+                    {records?.complainFrom.email}
                   </p>
                 </p>
                 <p
@@ -142,7 +134,7 @@ function ComplainsRecord() {
                       fontWeight: "normal",
                     }}
                   >
-                    {records?.userId.phoneNo}
+                    {records?.complainFrom.phoneNo}
                   </p>
                 </p>
                 <p
@@ -161,21 +153,21 @@ function ComplainsRecord() {
                       fontWeight: "normal",
                     }}
                   >
-                    {records?.userId.userType}
+                    {records?.complainFrom.userType}
                   </p>
                 </p>
               </div>
             </div>
             <div
               style={{
-                width: "100%",
+                width: "70%",
                 height: "100%",
-                backgroundColor: "#313131",
+                backgroundColor: "#cccccccc",
+                marginRight: "5%",
               }}
             >
               <p
                 style={{
-                  color: "#fff",
                   fontSize: 15,
                   textAlign: "center",
                   fontWeight: "bold",
@@ -189,11 +181,124 @@ function ComplainsRecord() {
                   marginTop: 5,
                   fontSize: 14,
                   textAlign: "justify",
-                  color: "#fff",
+                  padding: 5,
                 }}
               >
-                {records?.message}
+                {records?.comments}
               </p>
+            </div>
+            <div
+              style={{
+                width: "50%",
+                height: "100%",
+                flexDirection: "row",
+                display: "flex",
+              }}
+            >
+              <div
+                style={{
+                  height: "80%",
+                  width: "100%",
+                  padding: 10,
+                }}
+              >
+                <p
+                  style={{
+                    color: "#fff",
+                    marginTop: 5,
+                    fontSize: 15,
+                    display: "flex",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Name:{" "}
+                  <p
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "normal",
+                    }}
+                  >
+                    {records?.complainTo.name}
+                  </p>
+                </p>
+                <p
+                  style={{
+                    color: "#fff",
+                    marginTop: 5,
+                    fontSize: 15,
+                    display: "flex",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Email:{" "}
+                  <p
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "normal",
+                    }}
+                  >
+                    {records?.complainTo.email}
+                  </p>
+                </p>
+                <p
+                  style={{
+                    color: "#fff",
+                    marginTop: 5,
+                    fontSize: 15,
+                    display: "flex",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Phone No:
+                  <p
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "normal",
+                    }}
+                  >
+                    {records?.complainTo.phoneNo}
+                  </p>
+                </p>
+                <p
+                  style={{
+                    color: "#fff",
+                    marginTop: 5,
+                    fontSize: 15,
+                    display: "flex",
+                    fontWeight: "bold",
+                  }}
+                >
+                  UserType:{" "}
+                  <p
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "normal",
+                    }}
+                  >
+                    {records?.complainTo.userType}
+                  </p>
+                </p>
+              </div>
+              <div
+                style={{
+                  height: 150,
+                  width: 120,
+                  padding: 10,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#313131",
+                }}
+              >
+                <img
+                  style={{ width: 120, height: 150 }}
+                  src={
+                    records.complainTo.profileImage == null
+                      ? `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo-_-3mhBNtLmon5LbNiPXhxMGdqHlaBGLiDElxbNWBA&s`
+                      : `http://localhost:3000/public/img/profile/${records.complainTo.profileImage}`
+                  }
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -202,4 +307,4 @@ function ComplainsRecord() {
   );
 }
 
-export default ComplainsRecord;
+export default FeedBackRecord;

@@ -55,16 +55,25 @@ function DoctorProfile() {
   };
   return (
     <section className="main-section">
-      <div className="first">
-        <div className="first-left">
-          {/* <i>
-            <BsFillCalendar2XFill />
-          </i> */}
-          <p>{userProfile.name}</p>
-        </div>
-
-        <div>
+      <div
+        style={{
+          width: "100%",
+          height: "30%",
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            height: 150,
+            width: 120,
+            padding: 10,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#313131",
+          }}
+        >
           <img
+            style={{ width: 120, height: 150 }}
             src={
               userProfile.profileImage == null
                 ? `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo-_-3mhBNtLmon5LbNiPXhxMGdqHlaBGLiDElxbNWBA&s`
@@ -73,15 +82,38 @@ function DoctorProfile() {
             alt=""
           />
         </div>
+        <p
+          style={{
+            color: "#fff",
+            marginTop: 5,
+            fontSize: 15,
+            display: "flex",
+            fontWeight: "bold",
+            width: "20%",
+            height: "10%",
+            marginLeft: 10,
+          }}
+        >
+          Name:{" "}
+          <p
+            style={{
+              fontSize: 14,
+              fontWeight: "normal",
+            }}
+          >
+            {userProfile.name}
+          </p>
+        </p>
+
         <div
           className="buttons"
           style={{
             height: 40,
             alignSelf: "baseline",
-            justifyContent: "center",
-            alignItems: "center",
-            marginLeft: "80%",
-            marginTop: 100,
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
+            marginLeft: "30%",
+            // marginTop: 100,
           }}
         >
           <button
@@ -172,6 +204,16 @@ function DoctorProfile() {
           <p className="sub-text">NationalID</p>
           <p className="main-text">
             {userProfile?.nationalID == null
+              ? "Not Selected"
+              : userProfile?.nationalID}
+          </p>
+        </div>
+      </div>
+      <div className="third">
+        <div className="card-1">
+          <p className="sub-text">CNIC</p>
+          <p className="main-text">
+            {userProfile?.licenseNo == null
               ? "Not Selected"
               : userProfile?.nationalID}
           </p>
